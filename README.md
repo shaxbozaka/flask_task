@@ -28,8 +28,8 @@ pip install -r requirements.txt
 ```
 
 ## RUN
-```
-flask run
+```bash
+python start.py
 
 ```
 ## All done server listen on ```localhost:5000```
