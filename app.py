@@ -57,12 +57,12 @@ def hello_world():  # put application's code here
 @app.errorhandler(werkzeug.exceptions.BadRequest)
 def handle_bad_request(e):
     return jsonify({
-        "data": "bad request"
-    }), 404
+        "data": e.description
+    }), e.code
 
 
 app.register_error_handler(404, handle_bad_request)
-# app.register_error_handler(500, handle_bad_request)
+app.register_error_handler(500, handle_bad_request)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
